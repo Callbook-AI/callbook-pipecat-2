@@ -71,6 +71,18 @@ def create_stream_resampler(**kwargs) -> BaseAudioResampler:
     return SOXRStreamAudioResampler(**kwargs)
 
 
+def create_sync_resampler(**kwargs) -> BaseAudioResampler:
+    """Create a synchronous resampler for use in callback contexts.
+
+    Args:
+        **kwargs: Additional keyword arguments passed to the resampler constructor.
+
+    Returns:
+        A configured SOXRAudioResampler instance suitable for sync usage.
+    """
+    return SOXRAudioResampler(**kwargs)
+
+
 def mix_audio(audio1: bytes, audio2: bytes) -> bytes:
     """Mix two audio streams together by adding their samples.
 
