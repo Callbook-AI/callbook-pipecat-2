@@ -1384,3 +1384,11 @@ class MixerEnableFrame(MixerControlFrame):
     """
 
     enable: bool
+
+
+@dataclass
+class VoicemailFrame(Frame):
+    text: str
+
+    def __str__(self):
+        return F"{self.name}(text: [{self.text}])"
