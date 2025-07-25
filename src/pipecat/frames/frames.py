@@ -1005,6 +1005,13 @@ class STTMuteFrame(SystemFrame):
 
 
 @dataclass
+class STTRestartFrame(SystemFrame):
+    """System frame to restart the STT service."""
+    pass
+
+
+
+@dataclass
 class TransportMessageUrgentFrame(SystemFrame):
     """Frame for urgent transport messages that need immediate processing.
 
