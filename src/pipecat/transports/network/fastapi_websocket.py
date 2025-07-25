@@ -451,6 +451,8 @@ class FastAPIWebsocketOutputTransport(BaseOutputTransport):
             return
 
         try:
+            if hasattr(frame, 'audio') and self._final_assistant_audio_buffer is not None:
+                self._final_assistant_audio_buffer.extend(frame.audio)
             payload = await self._params.serializer.serialize(frame)
             if payload:
                 await self._client.send(payload)

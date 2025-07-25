@@ -83,6 +83,8 @@ class BaseOutputTransport(FrameProcessor):
         # us to send multiple streams at the same time if the transport allows
         # it.
         self._media_senders: Dict[Any, "BaseOutputTransport.MediaSender"] = {}
+        self._debug = False
+        self._final_assistant_audio_buffer = bytearray()
 
     @property
     def sample_rate(self) -> int:
