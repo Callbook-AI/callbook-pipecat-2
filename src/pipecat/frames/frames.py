@@ -799,6 +799,19 @@ class UserStoppedSpeakingFrame(SystemFrame):
 
 
 @dataclass
+class VADActiveFrame(SystemFrame):
+    """Send when the VAD detects the user is speaking"""
+    pass
+
+
+@dataclass
+class VADInactiveFrame(SystemFrame):
+    """Send when the VAD detects the user stopped speaking"""
+    pass
+
+
+
+@dataclass
 class EmulateUserStartedSpeakingFrame(SystemFrame):
     """Frame to emulate user started speaking behavior.
 
