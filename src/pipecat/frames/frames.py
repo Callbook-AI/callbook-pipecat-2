@@ -1407,8 +1407,13 @@ class MixerEnableFrame(MixerControlFrame):
 
 
 @dataclass
-class VoicemailFrame(Frame):
+class VoicemailFrame(DataFrame):
+    """Frame containing voicemail text message.
+    
+    Parameters:
+        text: The voicemail text content.
+    """
     text: str
 
     def __str__(self):
-        return F"{self.name}(text: [{self.text}])"
+        return f"{self.name}(text: [{self.text}])"
