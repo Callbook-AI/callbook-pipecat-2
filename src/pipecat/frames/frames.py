@@ -1417,3 +1417,12 @@ class VoicemailFrame(DataFrame):
 
     def __str__(self):
         return f"{self.name}(text: [{self.text}])"
+
+@dataclass
+class ParticipantJoinedFrame(ControlFrame):
+    """Frame indicating a participant has joined.
+
+    Used to indicate that a new participant has joined the session.
+    """
+
+    participant_id: str
