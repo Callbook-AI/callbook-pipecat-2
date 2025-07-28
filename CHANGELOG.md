@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added a new TTS service, `InworldTTSService`. This service provides
+  low-latency, high-quality speech generation using Inworld's streaming API.
+
 - Added a new field `handle_sigterm` to `PipelineRunner`. It defaults to `False`.
   This field handles SIGTERM signals. The `handle_sigint` field still defaults
   to `True`, but now it handles only SIGINT signals.
@@ -70,6 +73,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   recommended model.
 
 ### Fixed
+
+- Fixed an issue in `AudioBufferProcessor` when using `SmallWebRTCTransport` where, if
+  the microphone was muted, track timing was not respected.
 
 - Fixed an issue in `AudioBufferProcessor` that caused garbled audio when
   `enable_turn_audio` was enabled and audio resampling was required.
@@ -139,7 +145,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   user started early, while the bot was still working through
   `trigger_assistant_response()`.
 
-## [0.0.75] - 2025-07-08
+## [0.0.75] - 2025-07-08 [YANKED]
+
+**This release has been yanked due to resampling issues affecting audio output
+quality and critical bugs impacting `ParallelPipelines` functionality.**
+
+**Please upgrade to version 0.0.76 or later.**
 
 ### Added
 
@@ -200,7 +211,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove unncessary push task in each `FrameProcessor`.
 
-## [0.0.74] - 2025-07-03
+## [0.0.74] - 2025-07-03 [YANKED]
+
+**This release has been yanked due to resampling issues affecting audio output
+quality and critical bugs impacting `ParallelPipelines` functionality.**
+
+**Please upgrade to version 0.0.76 or later.**
 
 ### Added
 
