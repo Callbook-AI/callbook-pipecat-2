@@ -628,6 +628,7 @@ class StartFrame(SystemFrame):
     enable_usage_metrics: bool = False
     interruption_strategies: List[BaseInterruptionStrategy] = field(default_factory=list)
     report_only_initial_ttfb: bool = False
+    task_manager: Optional[Any] = None
 
 
 @dataclass
